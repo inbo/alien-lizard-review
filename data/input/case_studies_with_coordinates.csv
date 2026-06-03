@@ -1,0 +1,57 @@
+Species,year,location,coord_X,coord_Y,measure,measure_full,reference,reference_DOI,reference_link,notes
+Acanthodactylus boskianus,2023,"USA, California",-1.194.494,371.661,DE,early detection and rapid eradication,WERC 2024,,https://www.usgs.gov/centers/werc/science/newly-introduced-fringe-toed-lizard-species-found-ventura-county-california,Listed source is a USGS/WERC web page; no DOI found.
+Agama picticauda,2013-2020,"USA, Florida",-824.497,286.305,C,control,Florida Fish Wildlife Conservation Commission 2026,,https://myfwc.com/wildlifehabitats/profiles/reptiles/lizards/peters-rock-agama/,Listed source is an FWC species/profile webpage; no DOI found. Related article: Claunch et al. 2026 DOI 10.3389/famrs.2026.1699230.
+Agama picticauda,2023-2026,"France, Réunion",555.364,-211.151,E,eradication,Nature Océan Indien 2023,,,Technical/project report; no DOI found.
+Anolis carolinensis,2009,"Japan, Okinawajima",1.279.298,264.837,C,control,Suzuki-Ohno et al. 2017,10.1002/ece3.3002,https://doi.org/10.1002/ece3.3002,
+Anolis carolinensis,2013,"Japan, Anijima",1.422.078,271.189,C,control,Toda 2022,,https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202202214555635704,Japanese article/record; no DOI found in searched sources.
+Anolis carolinensis,2013,"Japan, Zamamijima",1.272.941,262.255,C,control,Toda 2022,,https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202202214555635704,Japanese article/record; no DOI found in searched sources.
+Anolis carolinensis,2006,"Japan, Chichijima",1.422.131,270.689,C,control,Toda et al. 2010,10.1007/978-4-431-53859-2_22,https://doi.org/10.1007/978-4-431-53859-2_22,
+Anolis carolinensis,2005,"Japan, Hahajima",1.421.558,266.577,C,control,Toda et al. 2010,10.1007/978-4-431-53859-2_22,https://doi.org/10.1007/978-4-431-53859-2_22,
+Anolis porcatus,2021,"Spain, Tenerife",-166.291,282.916,C,control,Afonso & Fariña 2023,,https://dialnet.unirioja.es/servlet/articulo?codigo=9573728,Boletín de la Asociación Herpetológica Española article; no DOI found.
+Anolis sagrei,2009,"China, Taiwan",1.209.605,236.978,C,control,Lee et al. 2019,10.3897/zookeys.829.27535,https://doi.org/10.3897/zookeys.829.27535,
+Anolis sagrei,2016,"China, Taiwan",1.209.605,236.978,C,control,Norvel et al. 2016,10.17161/randa.v23i1.14101,https://doi.org/10.17161/randa.v23i1.14101,reference appears to be Norval et al. 2016.
+Aspidoscelis sonorae,2020,"USA, California",-1.194.494,371.661,M,monitoring,Fisher et al. 2022,10.3389/fcosc.2022.846431,https://doi.org/10.3389/fcosc.2022.846431,
+Calotes versicolor,2003-2014,"Seychelles, St. Anne",´55.5136,−4.6083,E,eradication,"Rocamora 2019, Fanchette 2006",,https://www.islandinvasives.org/past-proceedings/2019-proceedings/,Both listed sources appear to be IUCN/proceedings/report material; no DOI found.
+Chamaeleo calyptratus,2019,"Spain, Gran Canaria",-155.474,279.202,C,control,Fernández Herrera 2020,,https://easin.jrc.ec.europa.eu/easin/Document/OutermostRegion/Spain/Canary%20Islands/Chamaeleo%20calyptratus%20Gran%20Canaria%2020%20julio%202020.pdf,Government/technical report; no DOI found.
+Chamaeleo calyptratus,2002-2012,"USA, Hawaii",-1.563.737,202.927,E,eradication,Yackel Adams et al. 2024,10.1111/conl.13051,https://doi.org/10.1111/conl.13051,
+Chamaeleo calyptratus,2022,"USA, Florida",-824.497,286.305,DE,early detection and rapid eradication,Miller et al. 2022,,https://bugwoodcloud.org/CDN/floridainvasives/ECISMA/13_Assesment_of_Invasive_Species_Control_Miller_19_July.pdf,Presentation/report PDF; no DOI found.
+Ctenosaura similis,2008-2011,"USA, Florida",-824.497,286.305,C,control,Avery et al. 2014,10.1111/1749-4877.12085,https://doi.org/10.1111/1749-4877.12085,
+Emoia cyanura,1970,"USA, Hawaii",-1.563.737,202.927,E,eradication,Fisher 2011,,https://iucn.org/resources/publication/island-invasives-eradication-and-management-proceedings-international,Book/proceedings chapter in Island invasives: eradication and management; no DOI found.
+Eutropis multifasciata,2009-2016,"China, Taiwan",1.209.605,236.978,E,eradication,"Chao & Lin 2017, Lee et al. 2019",10.15666/aeer/1502_001013; 10.3897/zookeys.829.27535,https://doi.org/10.15666/aeer/1502_001013; https://doi.org/10.3897/zookeys.829.27535,
+Gekko gecko,1936,"China, Taiwan",1.209.605,236.978,E,eradication,Lee et al. 2019,10.3897/zookeys.829.27535,https://doi.org/10.3897/zookeys.829.27535,
+Gekko monarchus,2015,"Taiwan, Linyuan",1.203.957,225.085,E,eradication,Lee et al. 2019,10.3897/zookeys.829.27535,https://doi.org/10.3897/zookeys.829.27535,
+Iguana iguana,2017,"The Netherlands, St. Eustatius",-629.736,17.489,DE,early detection and rapid eradication,Debrot et al. 2022,10.3391/mbi.2022.13.2.11,https://doi.org/10.3391/mbi.2022.13.2.11,
+Iguana iguana,2004,"USA, Florida",-824.497,286.305,I,information,Kern 2004,10.32473/edis-in528-2004,https://doi.org/10.32473/edis-in528-2004,
+Iguana iguana,2010-2013,Saint Lucia,-609.789,139.094,E,eradication,Krauss et al. 2014,,,Workshop/conference report; no DOI found.
+Iguana iguana,1992-2006,"USA, Florida",-824.497,286.305,C,control,Krysko et al. 2007,,https://journals.ku.edu/iguana/article/view/17706,Journal article page found; no DOI listed.
+Iguana iguana,2008,"USA, Puerto Rico",-665.901,182.208,C,control,Lopez-Torres et al. 2012,10.1007/s10530-011-0057-0,https://doi.org/10.1007/s10530-011-0057-0,
+Iguana iguana,2013-2017,"China, Taiwan",1.209.605,236.978,C,control,Lee et al. 2019,10.3897/zookeys.829.27535,https://doi.org/10.3897/zookeys.829.27535,
+Iguana iguana,2002-2006,"USA, Florida",-824.497,286.305,C,control,"Meshaka et al. 2007, Smith et al. 2007",,,Both listed sources appear to be reports/short journal notes without DOI.
+Iguana iguana,2010,Saint Lucia,-609.789,139.094,E,eradication,Morton & Krauss 2011,,https://journals.ku.edu/reptilesandamphibians/article/download/16144/14477/38545,Journal article PDF found; no DOI listed.
+Iguana iguana,2018-2021,"USA, Cayman Islands",-812.546,193.133,E,eradication,Rivera-Milan & Haakonsson 2020. Cayman News Service 2022,10.1007/s10530-020-02233-5; No DOI found,https://doi.org/10.1007/s10530-020-02233-5,DOI found for Rivera-Milán & Haakonsson 2020; no DOI found for Cayman News Service 2022.
+Iguana iguana,2011-2014,"France, Martinique",-610.242,146.415,DE,early detection and rapid eradication,Rodrigues 2014,,https://www.car-spaw-rac.org/IMG/pdf/Iguana_iguana_invasive_st_martin_2014.pdf,Technical report; no DOI found.
+Iguana iguana,2018,"USA, Dominica",-61.371,15.415,C,control,Van den Burg et al. 2020,10.1007/s10530-019-02107-5,https://doi.org/10.1007/s10530-019-02107-5,
+Iguana iguana,2021,"The Netherlands, Saba",-632.327,176.355,DE,early detection and rapid eradication,Van den Burg et al. 2023,10.1111/acv.12869,https://doi.org/10.1111/acv.12869,
+Iguana iguana,2014-2020,"USA, Bahamas",-773.963,250.343,C,control,Wasilewski et al. 2022,,https://www.herpconbio.org/Volume_17/Issue_1/Wasilewski_etal_2022.pdf,Herpetological Conservation and Biology article; no DOI found.
+Iguana iguana,2018-2020,"USA, Florida",-824.497,286.305,C,control,Wasilewski et al. 2022,,https://www.herpconbio.org/Volume_17/Issue_1/Wasilewski_etal_2022.pdf,Herpetological Conservation and Biology article; no DOI found.
+Intellagama lesueurii,2018-2024,New Zealand,174.886,-409.006,DE,early detection and rapid eradication,"Tuckey 2018, Jacobs 2024",,https://www.stuff.co.nz/national/102484384/australian-dragons-loose-in-levin-lake-doc-warns,News/web sources; no DOI found.
+Lampropholis delicata,2013-2014,"New Zealand, Great Barrier Island",1.754.093,-36.177,DE,early detection and rapid eradication,Wairepo 2015,,http://hdl.handle.net/10179/7562,MSc thesis; no DOI found; handle retained.
+Lampropholis delicata,2013-2014,"New Zealand, Great Barrier Island",1.754.093,-36.177,E,eradication,Wairepo 2015,,http://hdl.handle.net/10179/7562,MSc thesis; no DOI found; handle retained.
+Phelsuma grandis,2010,"France, Réunion",555.364,-211.151,DE,early detection and rapid eradication,Sanchez & Gandar 2010,,,Short article/report sources; no DOI found.
+Physignathus cocincinus,2013-2017,"China, Taiwan",1.209.605,236.978,C,control,Lee et al. 2019,10.3897/zookeys.829.27535,https://doi.org/10.3897/zookeys.829.27535,
+Podarcis muralis,2005-2007,"USA, Indiana",-861.349,402.672,DE,early detection and rapid eradication,Deichsel & Walker 2010,,,Herpetological Review note; no DOI found.
+Podarcis muralis,2010,"UK, Dorset",-23.013,507.482,C,control,Foster 2015,,https://www.lacerta.de/AF/Bibliografie/BIB_9798.pdf,Risk analysis/PDF; no DOI found.
+Podarcis pityusensis,2008-2010,Spain. Urgull,-19.886,433.248,E,eradication,Cabido et al. 2010,,,Unpublished technical report; no DOI found.
+Podarcis pityusensis,2010,"Spain, Bermeo",-2.723,43.419,E,eradication,Garin-Barrio et al. 2009,,,Unpublished technical report; no DOI found.
+Podarcis siculus,2015-2018,"Greece, Athens",237.275,379.838,DE,early detection and rapid eradication,Adamopoulou & Pafilis 2019,10.3897/herpetozoa.32.e36609,https://doi.org/10.3897/herpetozoa.32.e36609,
+Podarcis siculus,2020,"Spain, Bilbao and Getaria",-25.708,432.835,DE,early detection and rapid eradication,Gari­n-Barrio et al. 2020,,https://lacerta.eu/AF/Bibliografie/BIB_15136.pdf,Boletín de la Asociación Herpetológica Española article; no DOI found.
+Podarcis siculus,2010,"UK, Buckinghamshire",-8.138,518.156,DE,early detection and rapid eradication,Hodgkins et al. 2012,,https://conservationevidencejournal.com/reference/pdf/3996,Conservation Evidence article; no DOI found.
+Podarcis siculus,2009,"Spain, La Rioja",-25.396,422.871,DE,early detection and rapid eradication,Valdeon et al. 2010,,,Article/reference found in secondary sources; no DOI found.
+Podarcis siculus,2023-2028,"Italy, Sicily",140.154,37.599,E,eradication,Vignoli et al. 2024,,,Conference abstract; no DOI found.
+Podarcis siculus,2026-2027,"Greece, Crete",240.189,355.138,E,eradication,IUCN SOS 2026,,,
+Salvator merianae,2019,"USA, Georgia",-834.426,326.415,C,control,Haro et al. 2020,10.1656/058.019.0404,https://doi.org/10.1656/058.019.0404,
+Salvator merianae,2009-2014,"USA, Florida",-824.497,286.305,C,control,Institute of Food & Agricultural Sciences 2015,10.32473/edis-uw405-2015,https://doi.org/10.32473/edis-uw405-2015,DOI found for UF/IFAS EDIS publication (Harvey & Mazzotti).
+Salvator merianae,2018-2020,"USA, Florida",-824.497,286.305,E,eradication,Quinn et al. 2022,,https://www.herpconbio.org/Volume_17/Issue_3/Quinn_etal_2022.pdf,Herpetological Conservation and Biology article; no DOI found.
+Salvator merianae,2024,"USA, Florida",-824.497,286.305,DE,early detection and rapid eradication,Sandfoss et al. 2025,10.3391/mbi.2025.16.2.15,https://doi.org/10.3391/mbi.2025.16.2.15,
+Trachylepis quinquetaeniata,2019,"USA, California",-1.194.494,371.661,DE,early detection and rapid eradication,Pauly et al. 2019,,,Herpetological Review geographic distribution note; no DOI found.
+Varanus niloticus,2003-2005,"USA, Florida",-824.497,286.305,E,eradication,Campbell 2005,,https://chnep.wateratlas.usf.edu/upload/documents/MonitorLizardEradication_CampbellUnivTampa.pdf,Final technical report; no DOI found.
