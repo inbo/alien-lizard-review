@@ -1,0 +1,100 @@
+---
+title: "Documented case studies of eradication and control of invasive alien lizards"
+date: "2026-05-04"
+doi: "https://doi.org/10.5281/zenodo.20021526"
+output: html_document
+---
+
+```{r create map, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+# 0. Load packages
+library(leaflet)
+library(leaflet.extras)
+library(dplyr)
+library(readr)
+library(htmlwidgets)
+
+
+# 1. Load Data
+data <- read.csv("./data/input/case_studies_with_coordinates.csv")
+
+# 2. Coordinate Cleaning Logic
+clean_coord <- function(val) {
+  if (is.na(val)) return(NA)
+  # Remove dots and convert to numeric
+  s <- gsub("\\.", "", as.character(val))
+  num <- as.numeric(s)
+  
+  # Apply scaling based on magnitude
+  if (abs(num) > 100000) {
+    return(num / 10000)
+  } else {
+    return(num / 1000)
+  }
+}
+
+# Apply cleaning
+data_clean <- data %>%
+  dplyr::mutate(
+    lat = as.numeric(gsub("\\.", "", as.character(coord_Y))),
+    lon = as.numeric(gsub("\\.", "", as.character(coord_X))))%>%
+  dplyr::mutate(lat= ifelse(abs(lat) > 100000, lat / 10000, lat / 1000),
+                lon= ifelse(abs(lon) > 100000, lon / 10000, lon / 1000))%>%
+  dplyr::mutate(lat = ifelse(coord_Y=="−4.6083",-4.6083 , lat),
+                lon = ifelse(coord_X=="´55.5136",55.5136 , lon)) %>%
+  dplyr::filter(!is.na(lat) & !is.na(lon))
+
+# 3. Lump Categories
+# I, M, C -> Control (Black)
+# E, DE -> Eradication (Red)
+data_clean <- data_clean %>%
+  dplyr::mutate(Category = case_when(
+    trimws(measure) %in% c("C", "I", "M") ~ "Control",
+    trimws(measure) %in% c("E", "DE") ~ "Eradication",
+    TRUE ~ "Other"),
+  Color = ifelse(Category == "Control", "black", "red"))
+
+# 4. Create map
+leaflet(data_clean) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  setView(lng = 174, lat = -40, zoom = 4) %>%
+  addCircleMarkers(
+    lng = ~lon, 
+    lat = ~lat,
+    radius = 8,
+    fillColor = ~Color,
+    color = "white",
+    weight = 1.5,
+    fillOpacity = 0.9,
+    popup = ~paste0(
+      "<b>", Species, "</b><br>",
+      "<hr>",
+      "<b>Category:</b> ", Category, "<br>",
+      "<b>Measure:</b> ", measure_full, "<br>",
+      "<b>Location:</b> ", location, "<br>",
+      "<b>Ref:</b> ", reference
+    ),
+    clusterOptions = markerClusterOptions(
+      spiderfyOnMaxZoom = TRUE,
+      showCoverageOnHover = FALSE,
+      zoomToBoundsOnClick = TRUE
+    )
+  ) %>%
+  addLegend(
+    position = "topright",
+    colors = c("black", "red"),
+    labels = c("Control (C, I, M)", "Eradication (E, DE)"),
+    title = "Management Category",
+    opacity = 1
+  )%>% htmlwidgets::onRender("
+  function(el, x) {
+    el.style.width = '100%';
+    var map = this;
+    map.setView([20, -15], 2);
+  }
+")
+
+
+```
+
