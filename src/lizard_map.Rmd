@@ -5,8 +5,9 @@ doi: "https://doi.org/10.5281/zenodo.20021526"
 output: html_document
 ---
 
-```{r create map, echo=FALSE, message=FALSE, warning=FALSE}
+The map shows the geographic distribution of documented cases in which invasive alien lizards were either eradicated or brought under control. When exact coordinates were not available in the original source, approximate locations were represented using the centroid of the relevant locality or country.
 
+```{r create map, echo=FALSE, message=FALSE, warning=FALSE}
 
 # 0. Load packages
 library(leaflet)
@@ -15,37 +16,60 @@ library(dplyr)
 library(readr)
 library(htmlwidgets)
 
-
+#----------------
 # 1. Load Data
+#----------------
 data <- read.csv("./data/input/case_studies_with_coordinates.csv")
 
-# 2. Coordinate Cleaning Logic
-clean_coord <- function(val) {
-  if (is.na(val)) return(NA)
-  # Remove dots and convert to numeric
-  s <- gsub("\\.", "", as.character(val))
-  num <- as.numeric(s)
-  
-  # Apply scaling based on magnitude
-  if (abs(num) > 100000) {
-    return(num / 10000)
-  } else {
-    return(num / 1000)
-  }
-}
 
-# Apply cleaning
+#-------------------
+#2. Apply cleaning
+#-------------------
 data_clean <- data %>%
   dplyr::mutate(
     lat = as.numeric(gsub("\\.", "", as.character(coord_Y))),
     lon = as.numeric(gsub("\\.", "", as.character(coord_X))))%>%
   dplyr::mutate(lat= ifelse(abs(lat) > 100000, lat / 10000, lat / 1000),
                 lon= ifelse(abs(lon) > 100000, lon / 10000, lon / 1000))%>%
-  dplyr::mutate(lat = ifelse(coord_Y=="−4.6083",-4.6083 , lat),
-                lon = ifelse(coord_X=="´55.5136",55.5136 , lon)) %>%
+  dplyr::mutate(lat = ifelse(lat==	-40.9006,-40.6100 , lat),
+                lon = ifelse(lon==17.4886, 175.2547,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"UK, Buckinghamshire",52.03127 , lat),
+                lon = ifelse(location==	"UK, Buckinghamshire", -1.01765,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"USA, Hawaii" & Species=="Emoia cyanura",22.0964 , lat),
+                lon = ifelse(location==	"USA, Hawaii" & Species==	"Emoia cyanura", -159.5261,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"Seychelles, St. Anne" & Species=="Calotes versicolor",-4.613 , lat),
+                lon = ifelse(location==	"Seychelles, St. Anne" & Species=="Calotes versicolor", 55.503,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"USA, Hawaii"& Species=="Chamaeleo calyptratus",20.709722 , lat),
+                lon = ifelse(location==	"USA, Hawaii" & Species=="Chamaeleo calyptratus", -156.253333,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"Spain, La Rioja"& Species=="Podarcis siculus",42.287073 , lat),
+                lon = ifelse(location==	"Spain, La Rioja" & Species=="Podarcis siculus", -2.539603,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"UK, Dorset"& Species=="Podarcis muralis",50.7209 , lat),
+                lon = ifelse(location==	"UK, Dorset" & Species=="Podarcis muralis", -1.8348,lon))%>%
+  dplyr::mutate(lat = ifelse(location==	"Spain. Urgull"& Species=="Podarcis pityusensis",43.32472 , lat),
+                lon = ifelse(location==	"Spain. Urgull" & Species=="Podarcis pityusensis", -1.98889,lon),
+                location = ifelse(location==	"Spain. Urgull" & Species=="Podarcis pityusensis", "Spain, San Sebastian (Monte Urgull)",location))%>%
+  dplyr::mutate(lat = ifelse(location==	"Spain, Bilbao and Getaria"& Species=="Podarcis siculus",43.26252 , lat),
+                lon = ifelse(location==	"Spain, Bilbao and Getaria" & Species=="Podarcis siculus", -2.91869,lon),
+                location = ifelse(location==	"Spain, Bilbao and Getaria" & Species=="Podarcis siculus", "Spain, Bilbao (Parque Etxebarria)",location))%>%
   dplyr::filter(!is.na(lat) & !is.na(lon))
 
-# 3. Lump Categories
+
+# Create duplicate of the Bilbao row
+bilbao_new <- data_clean %>%
+  dplyr::filter(location == "Spain, Bilbao (Parque Etxebarria)" & 
+                Species == "Podarcis siculus") %>%
+  dplyr::mutate(location = "Spain, Getaria (Ratón de Getaria)",
+                lat = 43.3086,
+                lon = -2.2019)
+
+# Add the new row to the dataset
+data_clean <- dplyr::bind_rows(data_clean, bilbao_new)%>%
+  dplyr::select(-c(coord_X, coord_Y))%>%
+  dplyr::rename(species = Species)%>%
+  dplyr::relocate(lat, .after = location)%>%
+  dplyr::relocate(lon, .after = lat)
+
+# Lump Categories
 # I, M, C -> Control (Black)
 # E, DE -> Eradication (Red)
 data_clean <- data_clean %>%
@@ -55,7 +79,9 @@ data_clean <- data_clean %>%
     TRUE ~ "Other"),
   Color = ifelse(Category == "Control", "black", "red"))
 
-# 4. Create map
+#---------------
+#3. Create map
+#---------------
 leaflet(data_clean) %>%
   addProviderTiles(providers$CartoDB.Positron) %>%
   setView(lng = 174, lat = -40, zoom = 4) %>%
@@ -68,12 +94,15 @@ leaflet(data_clean) %>%
     weight = 1.5,
     fillOpacity = 0.9,
     popup = ~paste0(
-      "<b>", Species, "</b><br>",
+      "<b>", species, "</b><br>",
       "<hr>",
       "<b>Category:</b> ", Category, "<br>",
       "<b>Measure:</b> ", measure_full, "<br>",
       "<b>Location:</b> ", location, "<br>",
-      "<b>Ref:</b> ", reference
+      "<b>Reference:</b> ", reference,"<br>",
+      "<b>Reference DOI:</b> ", reference_DOI, "<br>",
+      "<b>Reference link:</b> ", reference_link, "<br>",
+      "<b>Notes:</b> ", notes
     ),
     clusterOptions = markerClusterOptions(
       spiderfyOnMaxZoom = TRUE,
@@ -95,6 +124,10 @@ leaflet(data_clean) %>%
   }
 ")
 
+#Export
+data_clean<-dplyr::select(data_clean, c(species, year, location, lat, lon, measure_full, reference, reference_DOI, reference_link, notes))%>%
+  dplyr::rename(measure = measure_full)
+write.csv(data_clean, "./data/output/alien_lizard_locations.csv", row.names=FALSE)
 
 ```
 
