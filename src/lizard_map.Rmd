@@ -83,7 +83,7 @@ data_clean <- data_clean %>%
 #3. Create map
 #---------------
 leaflet(data_clean) %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
+  addProviderTiles(providers$"Esri.WorldGrayCanvas") %>%
   setView(lng = 174, lat = -40, zoom = 4) %>%
   addCircleMarkers(
     lng = ~lon, 
